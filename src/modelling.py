@@ -16,7 +16,7 @@ import pandas as pd
 import copy
 import hashlib
 
-from utils import load_config, load_pickle, dump_pickle
+from src.utils import load_config, load_pickle, dump_pickle
 
 def time_stamp():
     return datetime.now()
@@ -133,8 +133,8 @@ def main():
     x_valid = load_pickle(config["prep_valid_path"]["x_valid"])
     y_valid = load_pickle(config["prep_valid_path"]["y_valid"])
 
-    x_test = load_pickle(config["prep_test_path"]["x_test"])
-    y_test = load_pickle(config["prep_test_path"]["y_test"])
+    # x_test = load_pickle(config["prep_test_path"]["x_test"])
+    # y_test = load_pickle(config["prep_test_path"]["y_test"])
 
     # initiate models
     lgr_baseline = LogisticRegression()

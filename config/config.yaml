@@ -24,6 +24,7 @@ prep_test_path:
   y_test: data/processed/y_test.pkl
 production_model_path: models/production_model.pkl
 training_log_path: log/training_log.json
+scaler_path: models/std_scaler.pkl
 
 # unwanted columns
 unwanted_columns:
@@ -33,17 +34,17 @@ unwanted_columns:
 # new column names
 new_columns_name:
 - temperature_c_
-- humidity_%_
+- humidity_percent_
 - tvoc_ppb_
 - eco2_ppm_
 - raw_h2
 - raw_ethanol
 - pressure_hpa
-- pm1.0
-- pm2.5
-- nc0.5
-- nc1.0
-- nc2.5
+- pm10
+- pm25
+- nc05
+- nc10
+- nc25
 - fire_alarm
 
 # columns data type
@@ -51,33 +52,33 @@ datetime_columns:
 - UTC
 float_columns:
 - temperature_c_
-- humidity_%_
+- humidity_percent_
 - tvoc_ppb_
 - eco2_ppm_
 - raw_h2
 - raw_ethanol
 - pressure_hpa
-- pm1.0
-- pm2.5
-- nc0.5
-- nc1.0
-- nc2.5
+- pm10
+- pm25
+- nc05
+- nc10
+- nc25
 int32_columns:
 - fire_alarm
 
 # predictors and label
 predictors:
 - temperature_c_
-- humidity_%_
+- humidity_percent_
 - tvoc_ppb_
 - eco2_ppm_
 - raw_h2
 - raw_ethanol
 - pressure_hpa
-- pm1.0
-- pm2.5
-- nc0.5
-- nc1.0
-- nc2.5
+- pm10
+- pm25
+- nc05
+- nc10
+- nc25
 label:
 - fire_alarm

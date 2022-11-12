@@ -1,7 +1,7 @@
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import copy
-from utils import load_config, load_pickle, dump_pickle
+from src.utils import load_config, load_pickle, dump_pickle
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.over_sampling import SMOTE
 
@@ -13,7 +13,12 @@ def std_scaler_fit(x_train: pd.DataFrame):
 
     return std_scaler
 
-def std_scaler_transform(features, scaler):
+
+def std_scaler_transform(features: pd.DataFrame, scaler: object) -> pd.DataFrame:
+
+    '''
+    this function transform features using standar scaler machine
+    '''
     
     col_names = scaler.feature_names_in_
 
@@ -64,6 +69,8 @@ def main():
 
     # standardizing
     scaler = std_scaler_fit(x_train)
+
+    dump_pickle(scaler, config["scaler_path"])
 
     x_train_scaled = std_scaler_transform(x_train, scaler)
     x_valid_scaled = std_scaler_transform(x_valid, scaler)
