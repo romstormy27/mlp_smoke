@@ -1,0 +1,83 @@
+raw_dataset_path: data/raw/smoke_detection_iot.csv
+raw_df_path: data/processed/raw_df.pkl
+train_set_path:
+  x_train: data/processed/x_train.pkl
+  y_train: data/processed/y_train.pkl
+valid_set_path:
+  x_valid: data/processed/x_valid.pkl
+  y_valid: data/processed/y_valid.pkl
+test_set_path:
+  x_test: data/processed/x_test.pkl
+  y_test: data/processed/y_test.pkl
+cleaned_raw_path: data/processed/df_raw.pkl
+prep_rus_path:
+  x_rus: data/processed/x_rus.pkl
+  y_rus: data/processed/y_rus.pkl
+prep_sm_path:
+  x_sm: data/processed/x_sm.pkl
+  y_sm: data/processed/y_sm.pkl
+prep_valid_path:
+  x_valid: data/processed/x_valid_prep.pkl
+  y_valid: data/processed/y_valid.pkl
+prep_test_path:
+  x_test: data/processed/x_test_prep.pkl
+  y_test: data/processed/y_test.pkl
+production_model_path: models/production_model.pkl
+training_log_path: log/training_log.json
+
+# unwanted columns
+unwanted_columns:
+- UTC
+- CNT
+
+# new column names
+new_columns_name:
+- temperature_c_
+- humidity_%_
+- tvoc_ppb_
+- eco2_ppm_
+- raw_h2
+- raw_ethanol
+- pressure_hpa
+- pm1.0
+- pm2.5
+- nc0.5
+- nc1.0
+- nc2.5
+- fire_alarm
+
+# columns data type
+datetime_columns:
+- UTC
+float_columns:
+- temperature_c_
+- humidity_%_
+- tvoc_ppb_
+- eco2_ppm_
+- raw_h2
+- raw_ethanol
+- pressure_hpa
+- pm1.0
+- pm2.5
+- nc0.5
+- nc1.0
+- nc2.5
+int32_columns:
+- fire_alarm
+
+# predictors and label
+predictors:
+- temperature_c_
+- humidity_%_
+- tvoc_ppb_
+- eco2_ppm_
+- raw_h2
+- raw_ethanol
+- pressure_hpa
+- pm1.0
+- pm2.5
+- nc0.5
+- nc1.0
+- nc2.5
+label:
+- fire_alarm
