@@ -41,7 +41,7 @@ def sm_balancer(x_train, y_train):
 
     return x_sm, y_sm
 
-if __name__ == "__main__":
+def main():
 
     config = load_config()
 
@@ -84,4 +84,8 @@ if __name__ == "__main__":
 
     dump_pickle(x_valid_scaled, config["prep_valid_path"]["x_valid"])
     dump_pickle(x_test_scaled, config["prep_test_path"]["x_test"])
+
+if __name__ == "__main__":
+
+    main()
 

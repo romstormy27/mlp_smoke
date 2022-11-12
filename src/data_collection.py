@@ -40,9 +40,7 @@ def split_data(dataframe: pd.DataFrame) -> tuple:
 
     return x_train, x_valid, x_test, y_train, y_valid, y_test
 
-
-if __name__ == "__main__":
-
+def main():
     df = read_raw_df(config["raw_dataset_path"])
 
     dump_pickle(df, config["raw_df_path"])
@@ -59,5 +57,10 @@ if __name__ == "__main__":
 
     dump_pickle(x_test, config["test_set_path"]["x_test"])
     dump_pickle(y_test, config["test_set_path"]["y_test"])
+
+
+if __name__ == "__main__":
+
+    main()
 
     

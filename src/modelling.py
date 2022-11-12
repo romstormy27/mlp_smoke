@@ -119,7 +119,7 @@ def get_best_model(training_log_df, list_of_model):
     
     return model_object
 
-if __name__ == "__main__":
+def main():
 
     config = load_config()
 
@@ -198,8 +198,10 @@ if __name__ == "__main__":
     # save best model
     dump_pickle(model, config["production_model_path"])
 
-    y_pred = model.predict(x_valid)
-    print(roc_auc_score(y_valid, y_pred))
+
+if __name__ == "__main__":
+
+    main()
 
 
 
