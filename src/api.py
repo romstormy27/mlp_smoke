@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+import uvicorn
 import pandas as pd
 import numpy as np
 
@@ -53,4 +54,9 @@ def predict(data: InputData):
     # Predict data
     y_pred = str(prod_model.predict(data))[1]
 
+    # y_pred = "[0]" --> 0
+
     return {"prediction" : y_pred}
+
+if __name__ == "__main__":
+    uvicorn.run("api:app", host = "0.0.0.0", port = 8080)
