@@ -1,5 +1,4 @@
 from src.data_collection import int_to_float, split_data
-from src.praprocessing import std_scaler_transform
 from src.utils import load_config
 
 import pandas as pd
@@ -25,8 +24,8 @@ def test_int_to_float():
     mock_df = int_to_float(mock_df)
 
     # assert
-    for i in mock_df.columns:
-        assert mock_df[i].dtypes == "float64"
+    for col in mock_df.columns:
+        assert mock_df[col].dtypes == "float64"
 
 def test_split_data():
 
@@ -47,9 +46,3 @@ def test_split_data():
 
     # assert
     assert x_train.shape[0] == 6
-
-
-
-if __name__ == "__main__":
-
-    test_int_to_float()
