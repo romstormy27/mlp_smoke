@@ -117,7 +117,7 @@ with st.form(key="smoke_data_form"):
 
         # create loading animation while predicting
         with st.spinner("Sending data to prediction server ..."):
-            res = requests.post("http://127.0.0.1:8000/predict/", json = raw_data).json()
+            res = requests.post("http://api:8080/predict/", json = raw_data).json()
 
         # parse the prediction result
         if res["prediction"] == "0":

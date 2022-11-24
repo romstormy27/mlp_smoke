@@ -1,0 +1,21 @@
+name: mlp_smoke
+services:
+  front_end:
+    build: docker/front_end/
+    image: mlp_frontend
+    container_name: mlp_frontend
+    depends_on:
+      - api
+    ports:
+      - 8501:8501
+    volumes:
+      - ./:/app/
+  api:
+    build: docker/api/
+    image: mlp_api
+    container_name: mlp_api
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app/
+    
